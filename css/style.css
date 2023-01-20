@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'BebasNeue';
+    src: url(../Bebas-Neue/fonts/BebasNeue\(2018\)ByDhamraType/woff-cffbased/BebasNeue-Regular.woff)format("woff");
+}
+
+
+body {
+    font: 18px/36px 'BebasNeue', sans-serif;
+}
+
+h1 {
+    font-size: 80px;
+    margin: 50px 0;
+    text-align: center;
+}
+.container .thumbs li img {
+    width: 120px;
+    height: 120px;
+}
