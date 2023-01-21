@@ -86,6 +86,12 @@ h1 {
     left: 0;
     background: rgba(0,0,0, .6);
 }
+
+.overlay:target .next,
+.overlay:target .prev {
+    animation: fade .5s .5s forwards;
+}
+
 .overlay img.full-size {
     max-height: 100%;
     width: 600px;
@@ -114,6 +120,40 @@ h1 {
     animation: slideDown .5s .5s forwards;
 }
 
+/* navigaasi */
+.next {
+    position: absolute;
+    width: 57px;
+    font-size: 15rem;
+    height: 93px;
+    top: 55%;
+    margin-left: 22rem;
+    text-decoration: none;
+    color: whitesmoke;
+    opacity: 0;
+}
+.prev {
+    position: absolute;
+    width: 57px;
+    font-size: 15rem;
+    height: 93px;
+    top: 55%;
+    margin-left: -30rem;
+    text-decoration: none;
+    color: whitesmoke;
+    opacity: 0;
+}
+
+/* animation */
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 @keyframes zoominout {
     0% {
