@@ -51,7 +51,7 @@ h1 {
     text-shadow: 1px 1px 1px #ddd;
     opacity: 0;
     transform: scale(0) rotate(0);
-    transition: .5s;
+    transition: .6s;
 }
 
 .galery li a:hover span {
@@ -59,8 +59,80 @@ h1 {
     transform: scale(1) rotate(360deg);
 }
 
-.container .thumbs li img {
+.container .thumbs li img.thumbs {
     width: 120px;
     height: 120px;
     border-radius: 50%;
+}
+
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0, 0);
+    z-index: 999999;
+    transition: 3s;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0, .6);
+}
+.overlay img.full-size {
+    max-height: 100%;
+    width: 600px;
+    height: 800px;
+    text-shadow: 2px 2px 7ox rgba(0,0,0, .5);
+}
+.overlay:target img.full-size {
+    animation: zoominout 1s;
+}
+
+.overlay a.close {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -20px;
+    color: whitesmoke;
+    text-decoration: none;
+    background: black;
+    border: 1px solid wheat;
+    line-height: 14px;
+    padding: 10px;
+    opacity: 0;
+}
+
+.overlay:target a.close {
+    animation: slideDown .5s .5s forwards;
+}
+
+
+@keyframes zoominout {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
 }
